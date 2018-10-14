@@ -8,9 +8,9 @@
 
         request.addEventListener("load", function() {
             var erroReq = document.querySelector(".erro-request");
-            btnBusca.classList.add("invisivel");
             if(request.status === 200) {
-                erroReq.classList.add("invisivel");
+                erroReq.remove();
+                btnBusca.remove();
                 var pacientes = JSON.parse(request.responseText);
 
                 for(paciente of pacientes) {
